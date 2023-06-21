@@ -3,7 +3,7 @@
 {% block content %}
 
 <body>
-  <div class="container mb-7 mt-5">
+
     {% if form.errors %}
     <h4>Usuario o clave incorrecta. Trata nuevamente.</h4>
     {% endif %}
@@ -22,7 +22,7 @@
         <input type="submit" class="btn btn-primary" value="Login" />
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
-  </div>
+
 </body>
 
 {% endblock  %}

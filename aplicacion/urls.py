@@ -5,8 +5,8 @@ from . import views
 urlpatterns = [
     path('home/', views.welcome, name='home'),
     path('factura/', views.factura, name="factura"), #endpoint
-    #path('clients/', views.view_client, name="clients"),
-    #path('formulario_profesor/', views.crear_profesor, name='formulario_profesor'),
+    path('consumidor/', views.consumidor, name="consumidor"),
+    path('proveedor/', views.proveedor, name='proveedor'),
     # path('register_user', views.register_user, name="register_user"),
     #path('register_user/', views.register_user, name='register_user'),
     #path('formulario/', views.formulario, name='formulario'),

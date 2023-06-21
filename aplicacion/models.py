@@ -15,7 +15,7 @@ class Factura(models.Model):
         return self.n_factura
 
 
-class Proovedor(models.Model):
+class Proveedor(models.Model):
     rut = models.CharField(max_length=100)
     razon = models.CharField(max_length=100)
     giro = models.CharField(max_length=100)

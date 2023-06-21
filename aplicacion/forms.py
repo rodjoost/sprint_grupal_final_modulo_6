@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User, Group, Permission
-from .models import Factura, Consumidor, Proovedor
+from .models import Factura, Consumidor, Proveedor
 
 class FacturaForm(forms.ModelForm):
 
@@ -14,9 +14,9 @@ class ConsumidorForm(forms.ModelForm):
         model = Consumidor
         fields = ['nombre', 'rut', 'giro', 'direccion', 'comuna','ciudad','tipo_compra']
 
-class ProovedorForm(forms.ModelForm):
+class ProveedorForm(forms.ModelForm):
     class Meta:
-        model = Proovedor
+        model = Proveedor
         fields = ['rut','razon','giro', 'direccion', 'email','telefono','tipo_venta']
 
 class UserRegistrationForm(UserCreationForm):

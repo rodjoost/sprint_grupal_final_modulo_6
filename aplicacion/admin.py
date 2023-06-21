@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Factura, Consumidor, Proovedor
+from .models import Factura, Consumidor, Proveedor
 from django.contrib.auth.models import User
 
 # Register your models here.
 admin.site.register(Factura)
 admin.site.register(Consumidor)
-admin.site.register(Proovedor)
+admin.site.register(Proveedor)
 
 
 class UserAdmin(admin.ModelAdmin):
