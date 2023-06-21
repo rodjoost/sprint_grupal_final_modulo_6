@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
@@ -32,7 +31,7 @@ def factura(request):
     context = {'form': form}
 
     return render(request, 'factura.html', context=context)
-
+@login_required
 def consumidor(request):
     form = ConsumidorForm()
     if request.method == "POST":
@@ -54,7 +53,7 @@ def consumidor(request):
     context = {'form': form}
 
     return render(request, 'consumidor.html', context=context)
-
+@login_required
 def proveedor(request):
     form = ProveedorForm()
     if request.method == "POST":
@@ -76,6 +75,25 @@ def proveedor(request):
     context = {'form': form}
 
     return render(request, 'proveedor.html', context=context)
+
+@login_required
+def register_user(request):
+    if request.method == "POST":
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            group = form.cleaned_data['group']
+            permissions = form.cleaned_data['permissions']
+            username = form.cleaned_data['username']
+            user.groups.add(group)
+            user.user_permissions.set(permissions)
+            messages.success(request, f'Usuario {username} creado exitosamente!!')
+            return redirect('/home')
+    else:
+        form = UserRegistrationForm()
+    
+    context = {'form': form}
+    return render(request, 'register_user.html', context)
 
         
 

@@ -1,8 +1,21 @@
 nav, footer {
-    background-color: rgb(230, 198, 175);
+    background-color: rgb(11, 100, 63);
 }
 
-.h1-usuarios {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: blue;
-}
+/* cambio dimensiones footer */
+.footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 3rem;
+  }
+  
+/* cambio color letra footer*/
+.footer p {
+    text-align: center;
+    color: white;
+  }
+
+
+body {
+    padding-top: 60px;
+  }
