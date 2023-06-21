@@ -1,0 +1,42 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<h1>Factura </h1>
+<div class="container mb-7 mt-5">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="n_factura">Numero Factura</label>
+            {{ form.n_factura }}
+        </div>
+        <div class="form-group">
+            <label for="producto">Producto</label>
+            {{ form.producto }}
+        </div>
+        <div class="form-group">
+            <label for="cantidad">Cantidad</label>
+            {{ form.cantidad }}
+        </div>
+        <div class="form-group">
+            <label for="neto">Neto</label>
+            {{ form.neto }}
+        </div>
+        <div class="form-group">
+            <label for="iva">IVA</label>
+            {{ form.iva }}
+        </div>
+        <div class="form-group">
+            <label for="total">Total</label>
+            {{ form.total}}
+        </div>
+        <div class="form-group">
+            <label for="fecha_emision">Fecha Emision</label>
+            {{ form.fecha_emision }}
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
